@@ -1,0 +1,49 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+depends = ['unite.vim']
+hook_add = '''
+    let g:vimfiler_as_default_explorer = 1
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+    let g:airline_theme = 'molokai'
+    let g:airline#extensions#tabline#enabled = 1
+'''
+depends = ['vim-airline-themes']
+
+[[plugins]]
+repo = 'MetalPhaeton/easybracket-vim'
+
+[[plugins]]
+repo = 'Kenta11/QiitaPy'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = '''
+    let g:indentLine_char = '¦'
+'''
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+
+[[plugins]]
+repo = 'mattn/sonictemplate-vim'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+hook_add = '''
+    let g:winresizer_vert_resize = 1
+    let g:winresizer_horiz_resize = 1
+'''
+

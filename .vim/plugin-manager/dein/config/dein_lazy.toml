@@ -1,0 +1,58 @@
+##### deoplete #####
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_event = 'InsertEnter'
+hook_source = '''
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#auto_complete_delay = 0
+'''
+hook_post_source = '''
+    inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+    \ neosnippet#expandable_or_jumpable() ?
+    \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+depends = ['nvim-yarp', 'vim-hug-neovim-rpc']
+
+##### neosnippet #####
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+on_event = 'InsertEnter'
+hook_source = '''
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+    smap <C-k> <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k> <Plug>(neosnippet_expand_target)
+    if has('conceal')
+        set conceallevel=2 concealcursor=niv
+    endif
+'''
+depends = ['neosnippet-snippets', 'context_filetype.vim']
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+##### vimfiler #####
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+##### vim-airline #####
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+##### davidhalter/jedi-vim #####
+
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = ['python']
