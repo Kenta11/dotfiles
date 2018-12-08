@@ -1,4 +1,4 @@
-" "echo "loading 40-control.vim"
+"40-control.vim"
 
 set autoindent
 set ambiwidth=double

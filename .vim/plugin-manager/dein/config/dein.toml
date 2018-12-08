@@ -3,11 +3,14 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+hook_add = '''
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+'''
 
 [[plugins]]
 repo = 'Shougo/vimfiler'
 depends = ['unite.vim']
-hook_add = '''
+hook_source = '''
     let g:vimfiler_as_default_explorer = 1
 '''
 
@@ -19,11 +22,17 @@ hook_add = '''
 '''
 depends = ['vim-airline-themes']
 
+# [[plugins]]
+# repo = 'MetalPhaeton/easybracket-vim'
+
 [[plugins]]
-repo = 'MetalPhaeton/easybracket-vim'
+repo = 'cohama/lexima.vim'
 
 [[plugins]]
 repo = 'Kenta11/QiitaPy'
+hook_add = '''
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:QiitaPy")) | q | endif
+'''
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'

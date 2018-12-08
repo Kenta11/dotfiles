@@ -1,4 +1,4 @@
-" "echo "loading 60-design.vim"
+"60-design.vim"
 
 set number
 set cursorline

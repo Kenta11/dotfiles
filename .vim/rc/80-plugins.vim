@@ -1,11 +1,4 @@
-" "echo "loading 80-plugins.vim"
-
-" setting for NERDTree
-" autocmd Vimenter * NERDTree | wincmd p
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" QiitaPy
-autocmd bufenter * if (winnr("$") == 1 && exists("b:QiitaPy")) | q | endif
+"80-plugins.vim"
 
 " installing plugins
 

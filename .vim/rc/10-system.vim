@@ -1,4 +1,4 @@
-" "echo "loading 10-system.vim"
+"10-system.vim"
 
 " Python setting
 if has('pythonx')

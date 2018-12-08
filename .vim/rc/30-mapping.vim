@@ -1,4 +1,4 @@
-" "echo "loading 30-mapping.vim"
+"30-mapping.vim"
 
 " copy and paste without mad indent
 if &term =~ "xterm"
