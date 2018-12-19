@@ -48,6 +48,11 @@ repo = 'dhruvasagar/vim-table-mode'
 
 [[plugins]]
 repo = 'mattn/sonictemplate-vim'
+hook_add = '''
+    let g:sonictemplate_vim_template_dir = [
+	\ '$HOME/.vim/template'
+	\]
+'''
 
 [[plugins]]
 repo = 'simeji/winresizer'
