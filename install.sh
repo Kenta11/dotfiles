@@ -7,4 +7,4 @@ echo ${SCRIPT_DIR}
 ln -sf `echo ${SCRIPT_DIR}/.vimrc` ~/.vimrc
 ln -sf `echo ${SCRIPT_DIR}/.vim` ~/.vim
 
-git submodule foreach git pull origin master
+git submodule update --init --recursive
