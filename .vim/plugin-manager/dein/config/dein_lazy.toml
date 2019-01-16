@@ -1,12 +1,6 @@
 ##### deoplete #####
 
 [[plugins]]
-repo = 'roxma/nvim-yarp'
-
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_event = 'InsertEnter'
 hook_source = '''
@@ -19,6 +13,12 @@ hook_post_source = '''
     \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 '''
 depends = ['nvim-yarp', 'vim-hug-neovim-rpc']
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
 
 ##### neosnippet #####
 
@@ -51,8 +51,3 @@ repo = 'Shougo/unite.vim'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
-##### davidhalter/jedi-vim #####
-
-# [[plugins]]
-# repo = 'davidhalter/jedi-vim'
-# on_ft = ['python']
