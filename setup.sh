@@ -7,4 +7,7 @@ echo ${SCRIPT_DIR}
 ln -sf `echo ${SCRIPT_DIR}/.vimrc` ~/.vimrc
 ln -sf `echo ${SCRIPT_DIR}/.vim` ~/.vim
 
+# Zsh
+ln -sf `echo ${SCRIPT_DIR}/.zshrc` ~/.zshrc
+
 git submodule update --init --recursive
