@@ -7,10 +7,20 @@ promptinit
 # setopt histignorealldups sharehistory
 #
 # - my configuration
+# git
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats '(%s)[* %b]'
+zstyle ':vcs_info:*' actionformats '(%s)[%b|%a]'
+precmd() { vcs_info }
+
+# color
 local CYAN=$'%{\e[36m%}'
 local RED=$'%{\e[31m%}'
 local WHITE=$'%{\e[1;37m%}'
-PROMPT="${CYAN}%D{%Y-%m-%d %H:%M:%S} ${RED}[%n@%M %c]${WHITE}${reset_color}
+
+PROMPT="${CYAN}%D{%Y-%m-%d %H:%M:%S} ${RED}[%n@%M %c]${WHITE}${reset_color}"
+RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+PROMPT=$PROMPT"
 $ "
 setopt prompt_subst
 
@@ -57,4 +67,4 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-source .zshrc_local
+source ~/.zshrc_local
