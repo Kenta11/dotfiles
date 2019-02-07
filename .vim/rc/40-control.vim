@@ -19,4 +19,4 @@ augroup END
 
 " tab
 nmap <C-p> <Plug>AirlineSelectPrevTab
-nmap <C-p> <Plug>AirlineSelectNextTab
+nmap <C-n> <Plug>AirlineSelectNextTab
