@@ -3,20 +3,12 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-##### nerdtree #####
-
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-'''
-
 ##### vimfiler #####
 
 [[plugins]]
 repo = 'Shougo/vimfiler'
 depends = ['unite.vim']
-hook_source = '''
+hook_add = '''
     let g:vimfiler_as_default_explorer = 1
 '''
 
@@ -30,8 +22,8 @@ hook_add = '''
 '''
 depends = ['vim-airline-themes']
 
-# [[plugins]]
-# repo = 'vim-airline/vim-airline-themes'
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
 
 ##### lexima #####
 
@@ -45,19 +37,6 @@ repo = 'Kenta11/QiitaPy'
 hook_add = '''
     autocmd bufenter * if (winnr("$") == 1 && exists("b:QiitaPy")) | q | endif
 '''
-
-# ##### indentLine #####
-# 
-# [[plugins]]
-# repo = 'Yggdroot/indentLine'
-# hook_add = '''
-#     let g:indentLine_char = '¦'
-# '''
-# 
-# ##### Quickrun #####
-# 
-# [[plugins]]
-# repo = 'thinca/vim-quickrun'
 
 ##### vim-table-mode #####
 
