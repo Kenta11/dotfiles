@@ -22,9 +22,6 @@ hook_add = '''
 '''
 depends = ['vim-airline-themes']
 
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
-
 ##### lexima #####
 
 [[plugins]]
