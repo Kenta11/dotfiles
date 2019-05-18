@@ -1,14 +1,12 @@
 "80-plugins.vim"
 
-" installing plugins
-
 if &compatible
   set nocompatible
 endif
-set runtimepath+=~/.vim/plugin-manager/dein/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.vim/plugin-manager/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state(expand('~/.vim/plugin-manager/dein/dein/'))
-  call dein#begin(expand('~/.vim/plugin-manager/dein/dein/'))
+if dein#load_state(expand('~/.vim/plugin-manager/dein/'))
+  call dein#begin(expand('~/.vim/plugin-manager/dein/'))
   
     let g:rc_dir      = expand('~/.vim/plugin-manager/dein/config')
     let s:toml        = g:rc_dir . '/dein.toml'
