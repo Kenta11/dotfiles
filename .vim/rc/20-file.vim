@@ -2,6 +2,7 @@
 
 set fenc=UTF-8
 set nobackup
+set noundofile
 
 " setting tab
 " Makefile
