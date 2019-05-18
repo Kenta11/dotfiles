@@ -3,12 +3,19 @@
 if &compatible
   set nocompatible
 endif
-set runtimepath+=~/.vim/plugin-manager/dein/repos/github.com/Shougo/dein.vim
+if has("win64")
+    set runtimepath+=~/vimfiles/plugin-manager/dein/repos/github.com/Shougo/dein.vim
+    let s:path_to_dot_vim = '~/vimfiles'
+elseif has("unix")
+    set runtimepath+=~/.vim/plugin-manager/dein/repos/github.com/Shougo/dein.vim
+    let s:path_to_dot_vim = '~/.vim'
+endif
 
-if dein#load_state(expand('~/.vim/plugin-manager/dein/'))
-  call dein#begin(expand('~/.vim/plugin-manager/dein/'))
+
+if dein#load_state(expand(s:path_to_dot_vim . '/plugin-manager/dein/'))
+  call dein#begin(expand(s:path_to_dot_vim . '/plugin-manager/dein/'))
   
-    let g:rc_dir      = expand('~/.vim/plugin-manager/dein/config')
+    let g:rc_dir      = expand(s:path_to_dot_vim . '/plugin-manager/dein/config')
     let s:toml        = g:rc_dir . '/dein.toml'
     let s:lazy_toml   = g:rc_dir . '/dein_lazy.toml'
 

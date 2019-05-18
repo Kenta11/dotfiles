@@ -1,14 +1,18 @@
 @rem Vim
 if exist %HOMEPATH%\_vimrc (goto VIMRC_TRUE) else goto VIMRC_FALSE
-:VIMRC_TRUE
-mklink    %HOMEPATH%\_vimrc   %~dp0.vimrc
 :VIMRC_FALSE
-echo "%HOMEPATH%\_vimrc already exists."
+    mklink    %HOMEPATH%\_vimrc   %~dp0.vimrc
+    goto VIMRC_END
+:VIMRC_TRUE
+    echo "%HOMEPATH%\_vimrc already exists."
+:VIMRC_END
 
 if exist %HOMEPATH%\_vimrc (goto VIM_TRUE) else goto VIM_FALSE
-:VIM_TRUE
-mklink /J %HOMEPATH%\vimfiles %~dp0.vim
 :VIM_FALSE
-echo "%HOMEPATH%\_vim already exists."
+    mklink /J %HOMEPATH%\vimfiles %~dp0.vim
+    goto VIM_END
+:VIM_TRUE
+    echo "%HOMEPATH%\_vim already exists."
+:VIM_END
 
 git submodule update --init --recursive
