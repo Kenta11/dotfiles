@@ -1,5 +1,6 @@
 "20-file.vim"
 
+set encoding=utf-8
 set fenc=UTF-8
 set nobackup
 set noundofile
