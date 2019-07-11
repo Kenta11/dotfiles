@@ -12,4 +12,4 @@ all: $(DOCUMENT)
 	pandoc $< -o $@ --pdf-engine=lualatex $(OPTIONS)
 
 clean:
-	rm -rf $(TARGET) $(WAVE)
+	rm -rf $(DOCUMENT)
