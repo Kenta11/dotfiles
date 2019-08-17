@@ -1,9 +1,5 @@
-##### dein #####
-
 [[plugins]]
 repo = 'Shougo/dein.vim'
-
-##### vimfiler #####
 
 [[plugins]]
 repo = 'Shougo/vimfiler'
@@ -12,35 +8,21 @@ hook_add = '''
     let g:vimfiler_as_default_explorer = 1
 '''
 
-##### vim-airline #####
-
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
     let g:airline_theme = 'molokai'
     let g:airline#extensions#tabline#enabled = 1
+    nmap <C-p> <Plug>AirlineSelectPrevTab
+    nmap <C-n> <Plug>AirlineSelectNextTab
 '''
 depends = ['vim-airline-themes']
-
-##### lexima #####
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
 
-##### QiitaPy #####
-
-[[plugins]]
-repo = 'Kenta11/QiitaPy'
-hook_add = '''
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:QiitaPy")) | q | endif
-'''
-
-##### vim-table-mode #####
-
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
-
-##### sonictemplate #####
 
 [[plugins]]
 repo = 'mattn/sonictemplate-vim'
@@ -50,15 +32,12 @@ hook_add = '''
 	\]
 '''
 
-##### winresizer #####
-
 [[plugins]]
 repo = 'simeji/winresizer'
 hook_add = '''
     let g:winresizer_vert_resize = 1
     let g:winresizer_horiz_resize = 1
 '''
-##### vim-toml #####
 
 [[plugins]]
 repo = 'cespare/vim-toml'
