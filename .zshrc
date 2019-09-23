@@ -67,4 +67,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+typeset -U PATH
+
 source ~/.zshrc_local
