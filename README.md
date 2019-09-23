@@ -1,6 +1,6 @@
 # dotfiles
 
-This repository is for dotfiles, like .zshrc, .vimrc, etc. It includes
+This repository is for dotfiles (.zshrc, .vimrc, etc.). It includes
 
 - .zshrc
 - .vimrc
