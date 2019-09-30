@@ -68,5 +68,6 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 typeset -U PATH
+unsetopt PROMPT_SP
 
 source ~/.zshrc_local
