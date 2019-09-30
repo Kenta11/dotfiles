@@ -8,8 +8,10 @@ OPTIONS    = $(addprefix --filter=,$(FILTER))
 
 all: $(DOCUMENT)
 
-.md.pdf :
-	pandoc $< -o $@ --pdf-engine=lualatex $(OPTIONS)
+%.pdf: %.md
+	pandoc $< -o $@\
+	    --pdf-engine=lualatex\
+		$(OPTIONS)
 
 clean:
-	rm -rf $(DOCUMENT)
+	rm -f $(DOCUMENT)
