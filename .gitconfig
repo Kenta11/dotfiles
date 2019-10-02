@@ -1,0 +1,7 @@
+[user]
+	name = Kenta11
+	email = kenta@unknown
+[core]
+	editor = vim
+[alias]
+    tree = log --graph --all --oneline
