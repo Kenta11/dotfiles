@@ -9,11 +9,17 @@ LINK_A_FILE () {
     fi
 }
 
+# Vim
 LINK_A_FILE .vimrc
 LINK_A_FILE .vim
+# Zsh
 LINK_A_FILE .zshrc
-LINK_A_FILE .gitconfig
-LINK_A_FILE .hyper.js
 touch ~/.zshrc_local
+# Git
+LINK_A_FILE .gitconfig
+# Hyper terminal
+LINK_A_FILE .hyper.js
+# i3
+LINK_A_FILE .i3status.conf
 
 git submodule update --init --recursive
