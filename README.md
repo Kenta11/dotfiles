@@ -1,6 +1,7 @@
 # dotfiles
 
-- .vim
 - .vimrc
+- .vim/
 - .zshrc
 - .gitconfig
+- .hyper.js

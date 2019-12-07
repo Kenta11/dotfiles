@@ -13,6 +13,7 @@ LINK_A_FILE .vimrc
 LINK_A_FILE .vim
 LINK_A_FILE .zshrc
 LINK_A_FILE .gitconfig
+LINK_A_FILE .hyper.js
 touch ~/.zshrc_local
 
 git submodule update --init --recursive
