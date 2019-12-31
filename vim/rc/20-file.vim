@@ -8,16 +8,16 @@ set noundofile
 " setting tab
 " Makefile
 if expand("%:r") == 'Makefile'
-  set noexpandtab
+    set noexpandtab
 " tex
 elseif expand("%:e") == "tex"
-  set expandtab
-  set tabstop=2
-  set softtabstop=2
-  set shiftwidth=2
+    set expandtab
+    set tabstop=2
+    set softtabstop=2
+    set shiftwidth=2
 else
-  set expandtab
-  set tabstop=4
-  set softtabstop=4
-  set shiftwidth=4
+    set expandtab
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
 endif

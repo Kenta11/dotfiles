@@ -11,7 +11,7 @@ if &term =~ "xterm"
         return a:ret
     endfunction
 
-    noremap <special> <expr> <Esc>[200~ XTermPasteBegin("0i")
+    noremap  <special> <expr> <Esc>[200~ XTermPasteBegin("0i")
     inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
     cnoremap <special> <Esc>[200~ <nop>
     cnoremap <special> <Esc>[201~ <nop>

@@ -2,24 +2,24 @@
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 LINK_A_FILE () {
-    if [ ! -e ~/$1 ]; then
-        ln -sf ${SCRIPT_DIR}/$1 ~/$1
+    if [ ! -e ~/.$1 ]; then
+        ln -sf ${SCRIPT_DIR}/$1 ~/.$1
     else
-        echo "~/$1 already exists"
+        echo "~/.$1 already exists"
     fi
 }
 
 # Vim
-LINK_A_FILE .vimrc
-LINK_A_FILE .vim
+LINK_A_FILE vimrc
+LINK_A_FILE vim
 # Zsh
-LINK_A_FILE .zshrc
+LINK_A_FILE zshrc
 touch ~/.zshrc_local
 # Git
-LINK_A_FILE .gitconfig
+LINK_A_FILE gitconfig
 # Hyper terminal
-LINK_A_FILE .hyper.js
+LINK_A_FILE hyper.js
 # i3
-LINK_A_FILE .i3status.conf
+LINK_A_FILE i3status.conf
 
 git submodule update --init --recursive

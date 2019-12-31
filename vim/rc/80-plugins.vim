@@ -3,12 +3,12 @@
 if &compatible
   set nocompatible
 endif
-if has("win64")
-    set runtimepath+=~/vimfiles/plugin-manager/dein/repos/github.com/Shougo/dein.vim
-    let s:path_to_dot_vim = '~/vimfiles'
-elseif has("unix")
+if has("unix")
     set runtimepath+=~/.vim/plugin-manager/dein/repos/github.com/Shougo/dein.vim
     let s:path_to_dot_vim = '~/.vim'
+elseif has("win64")
+    set runtimepath+=~/vimfiles/plugin-manager/dein/repos/github.com/Shougo/dein.vim
+    let s:path_to_dot_vim = '~/vimfiles'
 endif
 
 
