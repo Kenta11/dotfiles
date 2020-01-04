@@ -1,4 +1,2 @@
-/vim/plugin-manager/dein/*
-!vim/plugin-manager/dein/config
-!vim/plugin-manager/dein/repos/github.com/Shougo/dein.vim
-vim/.netrwhist
+/vim/.netrwhist
+/vim/plugin-manager/dein/repos
