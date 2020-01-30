@@ -1,4 +1,4 @@
-"60-design.vim"
+"60-view.vim
 
 set number
 set cursorline

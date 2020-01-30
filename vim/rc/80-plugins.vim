@@ -1,4 +1,4 @@
-"80-plugins.vim"
+"80-plugins.vim
 
 if &compatible
     set nocompatible
