@@ -1,7 +1,9 @@
 [[plugins]]
 repo = 'Shougo/defx.nvim'
-depends = ['nvim-yarp', 'vim-hug-neovim-rpc']
+depends = ['nvim-yarp', 'vim-hug-neovim-rpc', 'defx-icons']
 hook_add = '''
+    call defx#custom#option('_', { 'columns': 'indent:git:icons:filename', 'show_ignored_files': 1 })
+
     autocmd FileType defx call s:defx_my_settings()
     function! s:defx_my_settings() abort
         " Define mappings
@@ -40,14 +42,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'vim-airline/vim-airline'
-hook_add = '''
-    let g:airline_theme = 'molokai'
-    let g:airline#extensions#tabline#enabled = 1
-    nmap <C-p> <Plug>AirlineSelectPrevTab
-    nmap <C-n> <Plug>AirlineSelectNextTab
-'''
-depends = ['vim-airline-themes']
+repo = 'kristijanhusak/defx-icons'
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
@@ -55,9 +50,7 @@ repo = 'cohama/lexima.vim'
 [[plugins]]
 repo = 'mattn/sonictemplate-vim'
 hook_add = '''
-    let g:sonictemplate_vim_template_dir = [
-	\ '$HOME/.vim/template'
-	\]
+    let g:sonictemplate_vim_template_dir = ['$HOME/.vim/template']
 '''
 
 [[plugins]]
@@ -68,4 +61,21 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'cespare/vim-toml'
+repo = 'prabirshrestha/vim-lsp'
+depends = ['async.vim', 'asyncomplete.vim', 'asyncomplete-lsp.vim', 'vim-lsp-settings']
+hook_add = '''
+    let g:lsp_settings = { 'clangd': {'cmd': ['clangd-9']} }
+'''
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+hook_add = '''
+    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+    inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+'''
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'

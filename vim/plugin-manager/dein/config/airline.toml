@@ -1,0 +1,26 @@
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes', 'vim-devicons']
+hook_add = '''
+    let g:airline_theme = 'luna'
+    let g:airline#extensions#tabline#enabled = 1
+
+    nmap <C-p> <Plug>AirlineSelectPrevTab
+    nmap <C-n> <Plug>AirlineSelectNextTab
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = '''
+    let g:airline_powerline_fonts = 1
+
+    let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+    let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+    " after a re-source, fix syntax matching issues (concealing brackets):
+    if exists('g:loaded_webdevicons')
+        call webdevicons#refresh()
+    endif"
+'''
