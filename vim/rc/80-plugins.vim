@@ -20,8 +20,6 @@ if dein#load_state(s:path_to_dein)
 
     let g:rc_dir = s:path_to_dein . 'config/'
     call dein#load_toml(g:rc_dir . 'dein.toml',      {'lazy':0})
-    call dein#load_toml(g:rc_dir . 'airline.toml',   {'lazy':0})
-    call dein#load_toml(g:rc_dir . 'lang.toml',      {'lazy':0})
     call dein#load_toml(g:rc_dir . 'dein_lazy.toml', {'lazy':1})
 
     call dein#end()

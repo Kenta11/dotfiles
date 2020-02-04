@@ -41,11 +41,32 @@ hook_add = '''
     nnoremap <silent> <C-f> :<C-u>Defx -split=vertical -winwidth=20<CR>
 '''
 
-[[plugins]]
-repo = 'kristijanhusak/defx-icons'
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# depends = ['nvim-yarp', 'vim-hug-neovim-rpc']
+# hook_add = '''
+#     let g:deoplete#enable_at_startup = 1
+#     let g:deoplete#auto_complete_delay = 0
+# 
+#     inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+#     \ neosnippet#expandable_or_jumpable() ?
+#     \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+# '''
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
+
+# [[plugins]]
+# repo = 'Shougo/neosnippet.vim'
+# depends = ['neosnippet-snippets', 'context_filetype.vim']
+# hook_add = '''
+#     imap <C-k> <Plug>(neosnippet_expand_or_jump)
+#     smap <C-k> <Plug>(neosnippet_expand_or_jump)
+#     xmap <C-k> <Plug>(neosnippet_expand_target)
+#     if has('conceal')
+#         set conceallevel=2 concealcursor=niv
+#     endif
+# '''
 
 [[plugins]]
 repo = 'mattn/sonictemplate-vim'
@@ -54,28 +75,26 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'simeji/winresizer'
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes', 'vim-devicons']
 hook_add = '''
-    let g:winresizer_vert_resize = 1
-    let g:winresizer_horiz_resize = 1
+    let g:airline_theme = 'luna'
+    let g:airline#extensions#tabline#enabled = 1
+
+    nmap <C-p> <Plug>AirlineSelectPrevTab
+    nmap <C-n> <Plug>AirlineSelectNextTab
 '''
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 depends = ['async.vim', 'asyncomplete.vim', 'asyncomplete-lsp.vim', 'vim-lsp-settings']
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'simeji/winresizer'
 hook_add = '''
-    let g:lsp_settings = { 'clangd': {'cmd': ['clangd-9']} }
+    let g:winresizer_vert_resize = 1
+    let g:winresizer_horiz_resize = 1
 '''
-[[plugins]]
-repo = 'mattn/vim-lsp-settings'
-[[plugins]]
-repo = 'prabirshrestha/async.vim'
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete.vim'
-hook_add = '''
-    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-    inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-'''
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-lsp.vim'
