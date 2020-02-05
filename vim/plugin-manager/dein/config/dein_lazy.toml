@@ -13,9 +13,9 @@ repo = 'kristijanhusak/defx-icons'
 ### neosnippet ###
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
-
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
+######
 
 ### vim-airline ###
 [[plugins]]
