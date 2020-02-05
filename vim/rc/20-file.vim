@@ -2,7 +2,6 @@
 
 set encoding=utf-8
 set fenc=UTF-8
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
 set nobackup
 set noundofile
 
