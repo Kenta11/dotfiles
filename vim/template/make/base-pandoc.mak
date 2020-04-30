@@ -6,12 +6,12 @@ OPTIONS    = $(addprefix --filter=,$(FILTER))
 
 .SUFFIXES: .md .pdf
 
+.PHONY: all clean
+
 all: $(DOCUMENT)
 
 %.pdf: %.md
-	pandoc $< -o $@\
-	    --pdf-engine=lualatex\
-		$(OPTIONS)
+	pandoc $< -o $@ --pdf-engine=lualatex $(OPTIONS)
 
 clean:
 	rm -f $(DOCUMENT)
