@@ -7,10 +7,12 @@ endif
 if has("unix")
     set runtimepath+=~/.vim/plugin-manager/dein/dein.vim/
     let s:path_to_dot_vim = expand('~/.vim/')
-elseif has("win64")
+elseif has("win32")
     set runtimepath+=~/vimfiles/plugin-manager/dein/dein.vim/
     let s:path_to_dot_vim = expand('~/vimfiles/')
 endif
+
+echo s:path_to_dot_vim
 
 let s:path_to_dein = s:path_to_dot_vim . 'plugin-manager/dein/'
 if dein#load_state(s:path_to_dein)
