@@ -12,8 +12,6 @@ elseif has("win32")
     let s:path_to_dot_vim = expand('~/vimfiles/')
 endif
 
-echo s:path_to_dot_vim
-
 let s:path_to_dein = s:path_to_dot_vim . 'plugin-manager/dein/'
 if dein#load_state(s:path_to_dein)
     call dein#begin(s:path_to_dein)
