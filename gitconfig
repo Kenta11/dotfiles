@@ -4,6 +4,6 @@
 [core]
 	editor = vim
 [alias]
-    tree = log --oneline --graph --all --pretty=format:'%h [%cd] %d %s <%an>' --date=format:'%Y/%m/%d %H:%M:%S'
+	tree = log --oneline --graph --all --pretty=format:'%h [%cd] %d %s <%an>' --date=format:'%Y/%m/%d %H:%M:%S'
 [init]
 	defaultBranch = main
