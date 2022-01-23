@@ -17,9 +17,5 @@ LINK_A_FILE zshrc
 touch ~/.zshrc_local
 # Git
 LINK_A_FILE gitconfig
-# Hyper terminal
-LINK_A_FILE hyper.js
-# i3
-LINK_A_FILE i3status.conf
 
 git submodule update --init --recursive
