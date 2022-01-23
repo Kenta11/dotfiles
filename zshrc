@@ -69,4 +69,6 @@ fi
 
 typeset -U PATH
 
+bindkey  "^[[3~"  delete-char
+
 source ~/.zshrc_local
