@@ -1,4 +1,4 @@
-"30-copy-and-paste.vim
+"copy-and-paste.vim
 
 " copy and paste without mad indent
 if &term =~ "xterm"

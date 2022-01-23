@@ -1,4 +1,4 @@
-"40-control.vim
+"control.vim
 
 set autoindent
 set ambiwidth=double

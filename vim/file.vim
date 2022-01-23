@@ -1,4 +1,4 @@
-"20-file.vim
+"file.vim
 
 set encoding=utf-8
 set fenc=UTF-8

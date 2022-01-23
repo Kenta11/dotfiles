@@ -1,4 +1,4 @@
-"10-system.vim
+"system.vim
 
 " Python setting
 if has('pythonx') || has('python3')

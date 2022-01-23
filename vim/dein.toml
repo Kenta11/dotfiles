@@ -41,32 +41,55 @@ hook_add = '''
     nnoremap <silent> <C-f> :<C-u>Defx -split=vertical -winwidth=20<CR>
 '''
 
-# [[plugins]]
-# repo = 'Shougo/deoplete.nvim'
-# depends = ['nvim-yarp', 'vim-hug-neovim-rpc']
-# hook_add = '''
-#     let g:deoplete#enable_at_startup = 1
-#     let g:deoplete#auto_complete_delay = 0
-# 
-#     inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-#     \ neosnippet#expandable_or_jumpable() ?
-#     \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
-# '''
-
 [[plugins]]
-repo = 'cohama/lexima.vim'
+repo = 'Shougo/ddc.vim'
+depends = ['denops.vim']
+hook_add = '''
+    " Customize global settings
+    " Use around source.
+    " https://github.com/Shougo/ddc-around
+    call ddc#custom#patch_global('sources', ['around'])
 
-# [[plugins]]
-# repo = 'Shougo/neosnippet.vim'
-# depends = ['neosnippet-snippets', 'context_filetype.vim']
-# hook_add = '''
-#     imap <C-k> <Plug>(neosnippet_expand_or_jump)
-#     smap <C-k> <Plug>(neosnippet_expand_or_jump)
-#     xmap <C-k> <Plug>(neosnippet_expand_target)
-#     if has('conceal')
-#         set conceallevel=2 concealcursor=niv
-#     endif
-# '''
+    " Use matcher_head and sorter_rank.
+    " https://github.com/Shougo/ddc-matcher_head
+    " https://github.com/Shougo/ddc-sorter_rank
+    call ddc#custom#patch_global('sourceOptions', {
+        \ '_': {
+        \   'matchers': ['matcher_head'],
+        \   'sorters': ['sorter_rank']},
+        \ })
+
+    " Change source options
+    call ddc#custom#patch_global('sourceOptions', {
+        \ 'around': {'mark': 'A'},
+        \ })
+    call ddc#custom#patch_global('sourceParams', {
+        \ 'around': {'maxSize': 500},
+        \ })
+
+    " Customize settings on a filetype
+    call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
+    call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', {
+        \ 'clangd': {'mark': 'C'},
+        \ })
+    call ddc#custom#patch_filetype('markdown', 'sourceParams', {
+        \ 'around': {'maxSize': 100},
+        \ })
+
+    " Mappings
+
+    " <TAB>: completion.
+    inoremap <silent><expr> <TAB>
+    \ ddc#map#pum_visible() ? '<C-n>' :
+    \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+    \ '<TAB>' : ddc#map#manual_complete()
+
+    " <S-TAB>: completion back.
+    inoremap <expr><S-TAB>  ddc#map#pum_visible() ? '<C-p>' : '<C-h>'
+
+    " Use ddc.
+    call ddc#enable()
+'''
 
 [[plugins]]
 repo = 'mattn/sonictemplate-vim'
@@ -87,7 +110,13 @@ hook_add = '''
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
-depends = ['async.vim', 'asyncomplete.vim', 'asyncomplete-lsp.vim', 'vim-lsp-settings']
+depends = ['vim-lsp-settings']
+hook_add = '''
+    let g:lsp_settings = {
+    \   'clangd': {'cmd': ['clangd']},
+    \   'efm-langserver': {'disabled': v:false}
+    \}
+'''
 
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -98,3 +127,27 @@ hook_add = '''
     let g:winresizer_vert_resize = 1
     let g:winresizer_horiz_resize = 1
 '''
+
+[[plugins]]
+repo = 'mattn/emoji-vim'
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build_on = '''
+./install -all
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+[[plugins]]
+repo = 'previm/previm'
+
+[[plugins]]
+repo = 'mattn/vim-maketable'
+
+[[plugins]]
+repo = 'markonm/traces.vim'
+
+[[plugins]]
+repo = 'skanehira/translate.vim'
