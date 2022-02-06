@@ -6,7 +6,7 @@ set pastetoggle=<F2>
 set ignorecase
 set backspace=indent,eol,start
 
-" setting for binary mode
+" binary mode setting
 augroup BinaryXXD
     autocmd!
     autocmd BufReadPre     *.bin let &binary =1

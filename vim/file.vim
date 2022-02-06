@@ -5,11 +5,9 @@ set fenc=UTF-8
 set nobackup
 set noundofile
 
-" setting tab
-" Makefile
-if expand("%:r") == 'Makefile'
+" tab setting
+if expand("%:r") == 'Makefile' || expand("%:e") == 'mak'
     set noexpandtab
-" tex
 else
     set expandtab
     set tabstop=2

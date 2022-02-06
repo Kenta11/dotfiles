@@ -22,6 +22,15 @@ hook_source = '''
 '''
 ######
 
+### ddc.vim ###
+[[plugins]]
+repo = 'Shougo/ddc-around'
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+######
+
 ### vim-lsp ###
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
