@@ -1,18 +1,43 @@
-### defx.nvim ###
+################################### vim-lsp ####################################
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+################################################################################
+
+################################### ddc.vim ####################################
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+[[plugins]]
+repo = 'Shougo/ddc-around'
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+[[plugins]]
+repo = 'Shougo/pum.vim'
+hook_add = '''
+  inoremap <Tab>   <Cmd>call pum#map#insert_relative(+1)<CR>
+  inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+  inoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
+  inoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
+  inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+  inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+  inoremap <PageDown> <Cmd>call pum#map#insert_relative_page(+1)<CR>
+  inoremap <PageUp>   <Cmd>call pum#map#insert_relative_page(-1)<CR>
+'''
+[[plugins]]
+repo = 'shun/ddc-vim-lsp'
+################################################################################
+
+################################## defx.nvim ###################################
 [[plugins]]
 repo = 'roxma/nvim-yarp'
 [[plugins]]
 repo = 'roxma/vim-hug-neovim-rpc'
 [[plugins]]
 repo = 'kristijanhusak/defx-icons'
-######
+################################################################################
 
-### Shougo/ddc.nvim ###
-[[plugins]]
-repo = 'vim-denops/denops.vim'
-######
-
-### vim-airline ###
+################################# vim-airline ##################################
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 [[plugins]]
@@ -20,18 +45,5 @@ repo = 'ryanoasis/vim-devicons'
 hook_source = '''
     let g:airline_powerline_fonts = 1
 '''
-######
+################################################################################
 
-### ddc.vim ###
-[[plugins]]
-repo = 'Shougo/ddc-around'
-[[plugins]]
-repo = 'Shougo/ddc-matcher_head'
-[[plugins]]
-repo = 'Shougo/ddc-sorter_rank'
-######
-
-### vim-lsp ###
-[[plugins]]
-repo = 'mattn/vim-lsp-settings'
-######
