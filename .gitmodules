@@ -1,3 +1,0 @@
-[submodule "vim/plugin-manager/dein/dein.vim"]
-	path = vim/plugin-manager/dein/dein.vim
-	url = https://github.com/Shougo/dein.vim
