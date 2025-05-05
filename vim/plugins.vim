@@ -4,36 +4,41 @@ if &compatible
     set nocompatible
 endif
 
-"let s:dein_dir = expand('~/.cache/dein')
-"let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-"
-"if &runtimepath !~# '/dein.vim'
-"    if !isdirectory(s:dein_repo_dir)
-"        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-"    endif
-"    execute 'set runtimepath^=' . s:dein_repo_dir
-"endif
-"
-"if dein#load_state(s:dein_dir)
-"    call dein#begin(s:dein_dir)
-"
-"    let s:rc_dir = expand('~/.vim')
-"    call dein#load_toml(s:rc_dir . '/dein.toml',      {'lazy':0})
-"    call dein#load_toml(s:rc_dir . '/dein_lazy.toml', {'lazy':1})
-"
-"    call dein#end()
-"    call dein#save_state()
-"endif
-"
-"if dein#check_install()
-"    call dein#install()
-"endif
-"
-"let s:removed_plugins = dein#check_clean()
-"if len(s:removed_plugins) > 0
-"    call map(s:removed_plugins, "delete(v:val, 'rf')")
-"    call dein#recache_runtimepath()
-"endif
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-filetype plugin indent on
-syntax enable
+call plug#begin()
+
+" LSP
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
+" vim-airline
+Plug 'vim-airline/vim-airline'
+
+let g:airline_theme = 'luna'
+let g:airline#extensions#tabline#enabled = 1
+nmap <C-p> <Plug>AirlineSelectPrevTab
+nmap <C-n> <Plug>AirlineSelectNextTab
+
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'ryanoasis/vim-devicons'
+let g:airline_powerline_fonts = 1
+
+"sonictemplate
+Plug 'mattn/sonictemplate-vim'
+let g:sonictemplate_vim_template_dir = ['$HOME/.vim/template']
+
+" winresizer
+Plug 'simeji/winresizer'
+let g:winresizer_vert_resize = 1
+let g:winresizer_horiz_resize = 1
+
+" lexima
+Plug 'cohama/lexima.vim'
+
+call plug#end()
