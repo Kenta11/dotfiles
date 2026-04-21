@@ -3,6 +3,7 @@
 	email = 9071830+Kenta11@users.noreply.github.com
 [core]
 	editor = vim
+	pager = delta
 [alias]
 	tree = log --oneline --graph --all --pretty=format:'%h [%cd] %d %s <%an>' --date=format:'%Y/%m/%d %H:%M:%S'
 [init]

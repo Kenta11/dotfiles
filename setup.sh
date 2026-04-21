@@ -17,5 +17,7 @@ LINK_A_FILE zshrc
 touch ~/.zshrc_local
 # Git
 LINK_A_FILE gitconfig
+# tmux
+LINK_A_FILE tmux.conf
 
 git submodule update --init --recursive
