@@ -4,6 +4,14 @@
 [core]
 	editor = vim
 	pager = delta
+[delta]
+	plus-style = "white 28"
+	plus-non-emph-style = "white 22"
+	palus-emph-style = "bold white 28"
+	minus-style = "white 88"
+	minus-non-emph-style = "white 52"
+	minus-emph-style = "bold white 88"
+	syntax-theme = Monokai Extended
 [alias]
 	tree = log --oneline --graph --all --pretty=format:'%h [%cd] %d %s <%an>' --date=format:'%Y/%m/%d %H:%M:%S'
 [init]
